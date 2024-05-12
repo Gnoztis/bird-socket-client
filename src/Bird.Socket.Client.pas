@@ -457,7 +457,9 @@ begin
       try
         while Connected do
         begin
-          LByte := FSocket.ReadByte;
+	  if FSocket.InputBuffer.Size > 0 then	
+		          LByte := FSocket.ReadByte;
+
           if FUpgraded and (LPosition = 0) and GetBit(LByte, 7) then
           begin
             LOperationCode := ClearBit(LByte, 7);
