@@ -54,6 +54,10 @@ begin
 
   LBirdSocket.Connect;
   LBirdSocket.Send('Hello Server');
+
+  if LBirdSocket.Connected then
+      FBirdSocket.Disconnect;
+  FreeAndNil(FBirdSocket);
 end;
 ```
 
