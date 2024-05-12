@@ -264,6 +264,7 @@ begin
   if FAutoCreateHandler and Assigned(FIOHandler) then
     FIOHandler.Free;
   FInternalLock.Free;
+  FHeader.Free;
   inherited;
 end;
 
